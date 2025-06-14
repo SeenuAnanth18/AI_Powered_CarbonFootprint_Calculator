@@ -5,7 +5,7 @@ import os
 app = Flask(__name__)
 
 # Set your Groq API key
-client = Groq(api_key="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")
+client = Groq(api_key="Your_APIKey")
 
 def get_ai_advice(data):
     prompt = f"""Give personalized tips to reduce carbon emissions for:
