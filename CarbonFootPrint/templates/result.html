@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your Carbon Emissions</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Your Carbon Emissions ({{ time_period.capitalize() }})</h1>
+    <table>
+      <tr>
+        <th>Category</th>
+        <th>Emissions (kg CO₂)</th>
+      </tr>
+      {% for category, value in breakdown.items() %}
+      <tr>
+        <td>{{ category }}</td>
+        <td>{{ value }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <p><strong>Total: {{ total }} kg CO₂</strong></p>
+
+    <h2>Personalized Eco Tips</h2>
+    <div class="tips">
+      <pre>{{ tips }}</pre>
+    </div>
+
+    <a href="/">Back</a>
+  </div>
+</body>
+</html>
